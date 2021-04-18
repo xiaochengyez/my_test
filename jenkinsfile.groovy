@@ -1,6 +1,6 @@
 stage('pull source code') {
     node('master'){
-        git([url: 'git@github.com:xiaochengyez/my_test_container.git', branch: 'master'])
+        git([url: 'git@github.com:xiaochengyez/my_test.git', branch: 'master'])
     }
 }
 
