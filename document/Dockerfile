@@ -6,7 +6,7 @@ RUN mkdir /code \
 &&apt-get -y install unixodbc-dev
 COPY test_platform/ /code
 COPY requirements.txt /code
-#COPY base.py /code
+COPY base.py /code
 RUN pip install -r /code/requirements.txt -i https://pypi.douban.com/simple
 WORKDIR /code
 EXPOSE 8008

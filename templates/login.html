@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/static/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/static/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/static/dist/css/msg.css">
+
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -24,9 +26,9 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">登录进入系统</p>
 
-      <form action="/" method="post">
+      <form action="/" method="post" >
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="请输入邮箱" name="user" id="user">
+          <input type="email" class="form-control" placeholder="请输入邮箱" name="user" id="user" >
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -34,7 +36,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="请输入密码" name="passwd" id="passwd">
+          <input type="password" class="form-control" placeholder="请输入密码" name="passwd" id="passwd" >
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -52,8 +54,9 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block" value="Login">登录</button>
+            <button type="submit" class="btn btn-primary btn-block" value="Login" onclick="return check()">登录</button>
           </div>
+            <div id="CheckMsg" class="msg">{{ message }}</div>
           <!-- /.col -->
         </div>
       </form>
@@ -81,6 +84,7 @@
 <!-- AdminLTE App -->
 <script src="/static/dist/js/adminlte.min.js"></script>
 <script src="/static/plugins/toastr/toastr.min.js"></script>
+<script src="/static/dist/js/pages/login.js"></script>
 
 </body>
 </html>
