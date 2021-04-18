@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>后台管理系统  | 测试管理系统</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+ <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/index" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="http://www.xiaocheng.tech" class="nav-link"  >Contact</a>
+      </li>
+        <li class="nav-item d-none d-sm-inline-block">
+        <a href="/add_case/" class="nav-link"  >add</a>
+      </li>
+    </ul>
+     <form class="form-inline ml-3"  method="get" action="/case_search/">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" id="student_name" name="case_name">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+  </nav>
+ <!-- /.Navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <img src="/static/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">测试管理系统</span>
+    </a>
+    <!-- /.Brand Logo -->
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- 用户头像 -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="/static/dist/img/user.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="/profile/" class="d-block">{{ user }}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar 菜单 -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                项目管理
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+              <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/project/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> 项目列表</p>
+                </a>
+              </li>
+            </ul>
+              <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/add_project/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> 新增项目</p>
+                </a>
+              </li>
+            </ul>
+              <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/project_report/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> 项目报表</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+            <li class="nav-item has-treeview  menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                测试管理
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/test_case/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>测试用例</p>
+                </a>
+              </li>
+            </ul>
+                <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/test_interface/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>测试接口</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/test_report/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>测试报告</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="nav-header">工具箱</li>
+          <li class="nav-item">
+            <a href="/test_tool/" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                测试工具
+              </p>
+            </a>
+          </li>
+
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>测试列表</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">测试列表</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">测试用例</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width: 12%" >
+                          用例编号
+                      </th>
+                      <th style="width: 12%" >
+                          用例名称
+                      </th>
+                      <th style="width:12%" class="text-center">
+                          所属项目
+                      </th>
+                      <th style="width:8%" >
+                          优先级
+                      </th>
+                      <th style="width: 8%" >
+                          类型
+                      </th>
+                      <th style="width: 8%" class="text-center">
+                          状态
+                      </th>
+                      <th style="width: 12%">
+                          修改时间
+                      </th>
+                      <th style="width: 25%" class="text-center">
+                          操作
+                      </th>
+                  </tr>
+              </thead>
+
+              <tbody>
+              {% for case in  case_list%}
+                  <tr>
+                      <td>
+                          {{ case.id }}
+                      </td>
+                      <td>
+                          <a>
+                              {{ case.case_name }}
+                          </a>
+                      </td>
+                      <td>
+                         {{ case.belong_pro }}
+                      </td>
+                     <td>
+                        {{ case.get_case_level_display}}
+                     </td>
+                      <td>
+                          {{ case.get_case_type_display }}
+                      </td>
+                      <td class="project-state">
+                          <span class="badge badge-success">{{ case.get_case_status_display }}</span>
+                      </td>
+
+                      <td>
+                          <small>
+                             {{ case.update_time.date }}
+                          </small>
+                      </td>
+                      <td class="project-actions text-right">
+                          <a class="btn btn-primary btn-sm" href="/test_interface/{{ case.id }}">
+                              <i class="fas fa-folder">
+                              </i>
+                              查看
+                          </a>
+                          <a class="btn btn-info btn-sm" href="/edit_case/{{ case.id }}">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              修改
+                          </a>
+                          <a class="btn btn-success btn-sm" onclick="run()">
+                              <i class="fas fa-play">
+                              </i>
+                              运行
+                          </a>
+                      </td>
+                  </tr>
+                  <div class="modal fade" id="my-alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--窗口头部-->
+                <div class="modal-header">
+                    <h5>执行用例</h5>
+                </div>
+                <!--窗口中体-->
+                <div class="modal-body" id="my-alert-print">
+                        <select name="status" class="form-control" id="status">
+                            <option value="1">通过</option>
+                            <option value="0">失败</option>
+                        </select>
+                </div>
+                <!--窗口尾部-->
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-default" type="button" onclick="run_case({{ case.id }} )">确定</button>
+                    <button data-dismiss="modal" class="btn btn-default" type="button" >取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+              {% endfor %}
+              </tbody>
+
+          </table>
+
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+
+    <footer class="main-footer">
+    <strong>Copyright &copy; 2020 <a href="http://www.xiaocheng.tech">xiaocheng.tech</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="/static/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/static/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/static/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/static/dist/js/demo.js"></script>
+<script type="text/javascript">
+     function run(){
+      $('#my-alert').modal('show');
+    }
+    function run_case(id){
+         var status = document.getElementById('status').value;
+       $.ajax({
+           url: '/update_case/',
+           data:{"id":id,"status":status},
+           dataType:'json',
+          success:function (data) {
+               if(data){
+                   window.location.reload();
+               }
+            },
+            error: function () {
+                alert('Sorry，服务器可能开小差啦, 请重试!');
+            }
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>后台管理系统 | 测试管理系统</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/index" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="http://www.xiaocheng.tech" class="nav-link"  >Contact</a>
+      </li>
+    </ul>
+
+
+  </nav>
+ <!-- /.Navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <img src="/static/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">测试管理系统</span>
+    </a>
+    <!-- /.Brand Logo -->
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- 用户头像 -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="/static/dist/img/user.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="/profile/" class="d-block">{{ user }}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar 菜单 -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                项目管理
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+              <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/project/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> 项目列表</p>
+                </a>
+              </li>
+            </ul>
+              <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/add_project/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> 新增项目</p>
+                </a>
+              </li>
+            </ul>
+              <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/project_report/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> 项目报表</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+            <li class="nav-item has-treeview  menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                测试管理
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/test_case/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>测试用例</p>
+                </a>
+              </li>
+            </ul>
+                <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/test_interface/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>测试接口</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/test_report/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>测试报告</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="nav-header">工具箱</li>
+          <li class="nav-item">
+            <a href="/test_tool/" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                测试工具
+              </p>
+            </a>
+          </li>
+
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>接口列表</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">接口列表</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">接口列表</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
+              <div class="row">
+                  {% for project in project_list%}
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">{{ project.project_name }}接口数</span>
+                      <span class="info-box-number text-center text-muted mb-0">{{ project.get_count }}</span>
+                    </div>
+                  </div>
+                </div>
+                  {% endfor %}
+
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <h4>接口详情</h4>
+                    {% for inter in inter_list %}
+                    <div class="post">
+                      <div class="user-block">
+                          <a href="/case_search/?case_name={{ case }}">{{ case }}</a>
+
+                      </div>
+                      <!-- /.user-block -->
+                      <p>
+                        接口url：{{ inter.inter_url }}
+                          </br>
+                        接口头信息：{{ inter.inter_headers }}
+                          </br>
+                        接口参数：{{ inter.inter_params }}
+                      </p>
+
+                      <p>
+                        <a class="btn btn-success btn-sm"  onclick="run_case('{{ inter.id }}')"><i class="fas fa-link mr-1"></i>执行</a>
+
+                      </p>
+                    </div>
+                    {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
+              <h3 class="text-primary"><i class="fas fa-paint-brush"></i>接口文档</h3>
+              <p class="text-muted">swagger地址</p>
+
+              <div class="text-muted">
+                <p class="text-sm">Client
+                  <b class="d-block">用户端接口</b>
+                    卡卷中心：</br>
+                    <a href="http://10.0.0.142:8623/swagger-ui.html#">http://10.0.0.142:8623/swagger-ui.html/</a>
+                </p>
+                <p class="text-sm">app
+                  <b class="d-block">召牌快取app接口</b>
+                    <a href="https://qa-station-web.xiaoxin.tech/swagger-ui.html">https://qa-station-web.xiaoxin.tech/swagger-ui.html/</a>
+
+                </p>
+                  <p class="text-sm">admin
+                  <b class="d-block">后台管理端接口</b>
+                      mall-admin：</br>
+                      <a href="https://qa-mall-admin.xiaoxin.tech/swagger-ui.html">https://qa-mall-admin.xiaoxin.tech/swagger-ui.html</a>
+                </p>
+                   <p class="text-sm">h5
+                  <b class="d-block">h5端接口</b>
+                      中央厨房端：</br>
+                      <a href="http://10.0.0.144:7030/swagger-ui.html#/">http://10.0.0.144:7030/swagger-ui.html</a></br>
+
+
+                      分发管理端：</br>
+                      <a href="http://10.0.0.144:7070/swagger-ui.html#/">http://10.0.0.144:7070/swagger-ui.html</a>
+                </p>
+              </div>
+
+              <h5 class="mt-5 text-muted">接口操作</h5>
+
+                <a  class="btn btn-sm btn-primary" id="new_inter" onclick="add_inter()">新增接口</a>
+                <a href="#" class="btn btn-sm btn-warning" onclick="show()">生成测试报告</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>
+
+
+
+
+      <div class="modal fade" id="my-alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--窗口头部-->
+                <div class="modal-header">
+                    <h5>执行结果</h5>
+                </div>
+                <!--窗口中体-->
+                <div class="modal-body" id="my-alert-print">
+                    <p>返回结果</p>
+                </div>
+                <!--窗口尾部-->
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-default" type="button">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+          <div class="modal fade" id="loadingModal">
+                <div style="width: 300px;height:20px; z-index: 20000; position: absolute; text-align: center; left: 50%; top: 50%;margin-left:-100px;margin-top:-10px">
+                    <div class="progress progress-striped active" style="margin-bottom: 0;">
+                        <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <h4 style="color:rgba(0,0,0,0.95)"> <strong>报告生成中，请稍等！</strong> </h4>
+                </div>
+            </div>
+    <!-- /.content -->
+  </div>
+
+  <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--窗口头部-->
+                <div class="modal-header">
+                    <button data-dismiss="modal" class="close" type="button">
+                        <span aria-hidden="true">&times</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h5>新增接口</h5>
+                </div>
+                <div class="col-md-10"  >
+                    <form role="form" method="post" action="/add_inter/" >
+
+                        <div class="form-group" >
+
+                        <label for="case_name">所属用例</label>
+                          <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-edit"></i></span>
+                          </div>
+                              <select name="belong_case_id" class="form-control" >
+                                    {% for case in case_list %}
+                                        <option value={{ case.id }}>{{ case.case_name }}</option>
+                                    {% endfor %}
+                                </select>
+                          </div>
+
+
+                        <label for="inter_url">接口url</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-edit"></i></span>
+                          </div>
+                                <input type="text" class="form-control" id="inter_url" name="inter_url" size="50" placeholder="请输入接口url" value="">
+                          </div>
+
+                            <label for="inter_type">接口类型</label>
+                       <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-edit"></i></span>
+                          </div>
+                                 <select name="inter_type" class="form-control" id="inter_type">
+                                    <option value="get">GET</option>
+                                    <option value="post">POST</option>
+                                </select>
+                          </div>
+
+                        <label for="inter_param">接口参数</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-edit"></i></span>
+                          </div>
+                            <textarea type="text" class="form-control" name="inter_param" size="50" placeholder="请输入接口参数"></textarea>
+                          </div>
+
+                        <label for="inter_header">接口头信息</label>
+                       <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-edit"></i></span>
+                          </div>
+                           <textarea type="text" class="form-control" id="inter_header" name="inter_header" size="50" placeholder="请输入接口头信息" ></textarea>
+                          </div>
+
+                    </div>
+
+                     <div class="modal-footer">
+
+                    <button data-dismiss="modal" class="btn btn-default" type="button">那就再想想吧</button>
+                    <button class="btn btn-success float-right"  type="submit" >新增</button>
+                </div>
+                </form>
+                </div>
+                <!--窗口尾部-->
+
+            </div>
+        </div>
+    </div>
+  <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+    <strong>Copyright &copy; 2020 <a href="http://www.xiaocheng.tech">xiaocheng.tech</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="/static/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/static/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/static/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/static/dist/js/demo.js"></script>
+
+<script type="text/javascript">
+
+
+    function add_inter(){
+        $('#myModal1').modal('show');
+    }
+
+    function show() {
+            $('#loadingModal').modal('show');
+            window.location.reload();
+        }
+
+    function run_case(id) {
+        $('#my-alert-print').text('返回结果');
+        $('#my-alert').modal('show');
+        $.ajax({
+              url: '/run_case/'+id,
+
+              success:function (data) {
+                    if (data !== 'ok') {
+                        $('#my-alert-print').text(data);
+                    }
+                    else {
+                        window.location.reload();
+                    }
+                },
+                error: function () {
+                    alert('Sorry，服务器可能开小差啦, 请重试!');
+                }
+
+            });
+
+    }
+
+
+
+</script>
+</body>
+</html>

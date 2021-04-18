@@ -1,0 +1,288 @@
+2020-08-24 19:54:26,136 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 19:54:26,139 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/?mobile=13383365763'>)
+2020-08-24 19:54:50,106 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 19:54:50,107 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/?mobile=13383365763'>)
+2020-08-24 20:00:42,474 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 20:00:42,475 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/?mobile=13383365763'>)
+2020-08-24 20:05:18,742 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 20:05:18,743 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/?mobile=13383365763'>)
+2020-08-24 20:07:52,912 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 20:07:52,912 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/?mobile=13383365763'>)
+2020-08-24 20:10:09,998 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 20:10:09,998 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/?mobile=13383365763'>)
+2020-08-24 20:11:45,310 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 20:11:45,311 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/'>)
+2020-08-24 20:12:39,155 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 20:12:39,155 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/?mobile=13383365763'>)
+2020-08-24 20:13:30,076 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 20:13:30,076 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/?mobile=13383365763'>)
+2020-08-24 20:18:38,771 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 20:18:38,771 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/?mobile='>)
+2020-08-24 20:25:58,478 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 20:25:58,479 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/'>)
+2020-08-24 20:59:57,474 - ERROR - mysqlUtil.py#execute():141 - main - Traceback (most recent call last):
+  File "D:\project\wife\test_platform\testPlatform\util\mysqlUtil.py", line 137, in execute
+    cnt = cur.execute(sql, param)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in _escape_args
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\cursors.py", line 122, in <genexpr>
+    return tuple(conn.literal(arg) for arg in args)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 467, in literal
+    return self.escape(obj, self.encoders)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\connections.py", line 460, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 27, in escape_item
+    val = encoder(val, mapping)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 118, in escape_unicode
+    return u"'%s'" % _escape_unicode(value)
+  File "D:\project\wife\test_platform\venv\lib\site-packages\pymysql\converters.py", line 73, in _escape_unicode
+    return value.translate(_escape_table)
+AttributeError: 'WSGIRequest' object has no attribute 'translate'
+
+2020-08-24 20:59:57,475 - ERROR - mysqlUtil.py#execute():142 - main - [sql]:update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s [param]:('', '', '', <WSGIRequest: GET '/update_user/'>)
