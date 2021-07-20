@@ -113,22 +113,24 @@ function update_stock(){
         }
   }
 
-  function delivery() {
-      var sub_project_id = document.getElementById('sub_project_id').value;
-      if(!sub_project_id){
-            alert('输入计划id不能为空')
+  function update_link() {
+      var my_link = document.getElementById('my_link').value;
+
+      if(!my_link){
+            alert('输入短链不能为空')
         }
+
       else {
+          console.info(my_link);
           $.ajax({
               type:'post',
-              data:{"sub_project_id":sub_project_id},
-
-              url: 'http://10.0.0.141:8089/completeDelivery/',
+              data:{"my_link":my_link},
+              url: '/update_link/',
         success:function (data) {
             alert(data);
         },
         error: function () {
-            alert('已经处理过了!');
+            alert('转换失败');
         }
 
         });

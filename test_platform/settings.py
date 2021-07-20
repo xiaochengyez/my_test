@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'test_platform.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': '47.94.152.171',  # 数据库所在服务器的ip地址
+        'HOST': 'localhost',  # 数据库所在服务器的ip地址
         'PORT': '3306',  # 监听端口 默认3306即可
         'NAME': 'project',  # 新建数据库名
         'USER': 'root',  # 数据库登录名

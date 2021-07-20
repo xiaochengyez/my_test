@@ -41,4 +41,8 @@ def get_count():
     print(redis.get_data('{0311110422}:20200830:1:361:'))
     print(redis.get_data('{0311110422}:20200830:1:362:'))
 
-get_count()
+
+
+
+
+

@@ -39,7 +39,7 @@ urlpatterns = [
 
 
     path('add_inter/',views.add_inter),
-    path('update_user/',views.update_user),
+    path('update_link/',views.update_link),
     path('get_limit_count/',views.get_limit_count),
     path('set_limit_count/',views.set_limit_count),
     path('get_goods_count/',views.get_goods_count),

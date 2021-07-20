@@ -12,9 +12,9 @@ class MysqlUtil:
     def _connect_mysql():
         try:
             load_dict = {
-                          "host": "xiaoxinqa.mysql.polardb.rds.aliyuncs.com",
-                          "user": "xiaoxin_qa_devep",
-                          "password": "!1qaz@2wsx",
+                          "host": "localhost",
+                          "user": "root",
+                          "password": "root",
                           "db": "c_user_center",
                           "charset": "utf8",
                           "port": 3306

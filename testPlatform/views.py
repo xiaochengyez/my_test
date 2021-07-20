@@ -1,5 +1,6 @@
 import datetime
 import json
+import time
 
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404
@@ -279,15 +280,20 @@ def testTool(request):
     user = request.session["now_account"]
     return render(request,'tester/mailbox.html',{'user':user})
 
-#更新用户
+#短链转长链
 @login_check
-def update_user(request):
-    mobile = request.GET.get('phone','')
-    result = MysqlUtil.execute("update biz_user set mobile = %s,open_id = %s,union_id=%s where mobile = %s",('', '', '', mobile))
-    if result == 1:
-        return HttpResponse(1)
+def update_link(request):
+    my_link = request.GET.get('my_link','')
+    print(my_link)
+    response = str(requests.post('https://duanwangzhihuanyuan.bmcx.com/web_system/bmcx_com_www/system/file/duanwangzhihuanyuan/get/',
+                  params={'ajaxtimestamp': str(int(time.time() * 1000))},
+                  data={'turl': my_link}).text)
+    print(response)
+    if '亲'  in response:
+        return HttpResponse('亲！不是短网址或暂不支持还原。')
     else:
-        return HttpResponse(0)
+        return HttpResponse(response.split("\"")[3])
+
 
 
 #查看限购数量

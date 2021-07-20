@@ -5,9 +5,9 @@
 import redis
 
 redisInfo = {
-    "host": 'r-2ze18cur7pi0rs0wih.redis.rds.aliyuncs.com',
-    "password": 'r-2ze18cur7pi0rs0wih',
-    "port": 6379,
+    "host":  "test.kakahui.net",
+    "password": 'test123',
+    "port": 6380,
     "db": 0
 }
 

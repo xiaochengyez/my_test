@@ -10,7 +10,7 @@
     <option name="languageLevel" value="ES6" />
   </component>
   <component name="MarkdownNavigator.ProfileManager" plain-text-search-scope="Project Files" />
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (test_platform)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9" project-jdk-type="Python SDK" />
   <component name="SuppressionsComponent">
     <option name="suppComments" value="[]" />
   </component>
